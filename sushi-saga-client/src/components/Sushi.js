@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 class Sushi extends React.Component {
 
@@ -33,7 +33,7 @@ class Sushi extends React.Component {
             this.state.eaten ?
               null
             :
-              <img src={this.props.sushi.img_url} width="100%" /> 
+              <img src={this.props.sushi.img_url} alt={this.props.sushi.name} width="100%" /> 
           }
         </div>
         <h4 className="sushi-details">
