@@ -7,17 +7,21 @@ class Sushi extends React.Component {
   }
 
   eatSushi = () => {
-    this.setState({
-      eaten: !this.state.eaten
-    })
+    if (this.state.eaten === false) {
+      this.setState({
+        eaten: true
+      })
+    }
   }
 
   checkMoney = (sushi) => {
     if (this.props.moneyAvailable >= this.props.sushi.price) {
-      this.props.addToPlatesArray(this.props.sushi)
-    } else {
-      alert('not enough money')
-    }
+      if (this.state.eaten === false) {
+        this.props.addToPlatesArray(this.props.sushi)
+      } else {
+        alert('cant do that')
+      }  
+      }
   }
 
   // (this.props.moneyAvailable > this.props.sushi.price) ? () => this.props.addToPlatesArray(this.props.sushi) : (alert('Not enough money'))
